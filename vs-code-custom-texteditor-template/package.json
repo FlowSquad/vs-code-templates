@@ -1,0 +1,64 @@
+{
+  "name": "vs-code-bpmn-modeler",
+  "displayName": "Custom Text Editor Example",
+  "description": "Example for custom text editor extension.",
+  "license": "Apache License 2.0",
+  "version": "0.0.1",
+  "publisher": "miragon-gmbh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FlowSquad/vs-code-bpmn-modeler"
+  },
+  "bugs": {
+    "url": "https://github.com/FlowSquad/vs-code-bpmn-modeler/issues"
+  },
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "icon": "images/vscode.svg",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCustomEditor:custom-text-editor"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "id": "custom-text-editor",
+        "viewType": "custom-text-editor",
+        "displayName": "Custom Text Editor",
+        "selector": [
+          {
+            "filenamePattern": "*.example"
+          }
+        ],
+        "priority": "default"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "web": "vite build --config web/vite.config.js",
+    "web-dev": "vite build --config web/vite.config.js --watch",
+    "ext": "tsup src/extension.ts --dts --external=vscode --sourcemap",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.72.0",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "@vscode/test-electron": "^2.1.3",
+    "eslint": "^8.11.0",
+    "glob": "^7.2.0",
+    "mocha": "^9.2.2",
+    "tsup": "^6.2.3",
+    "typescript": "^4.5.5",
+    "vite": "^3.1.5"
+  }
+}

@@ -1,0 +1,14 @@
+.vscode/**
+.vscode-test/**
+.github
+.githubignore
+.idea
+.browserlistrc
+vsc-extension-quickstart.md
+
+src/**
+src-ext/**
+node_modules/**
+
+**/tsconfig*.json
+**/.eslintrc.js
