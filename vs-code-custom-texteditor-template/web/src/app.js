@@ -13,7 +13,7 @@ import './app.css';
     let vscode;
     let textarea;
 
-    if (ENV === "vscode") {
+    if (ENV === ENVIRONMENTS.VsCode) {
         vscode = acquireVsCodeApi();
 
         const state = vscode.getState();
@@ -24,12 +24,22 @@ import './app.css';
         window.addEventListener('message', (event) => {
             const message = event.data;
             switch (message.type) {
-                case 'custom-text-editor.updateFromExtension':
+                case 'custom-text-editor.redo': {
                     editor.value = message.text;
+                    break;
+                }
+                case 'custom-text-editor.undo': {
+                    editor.value = message.text;
+                    break;
+                }
+                case 'custom-text-editor.updateFromExtension': {
+                    editor.value = message.text;
+                    break;
+                }
             }
         });
 
-    } else if (ENV === "browser") {
+    } else if (ENV === ENVIRONMENTS.Browser) {
         const simulator = document.createElement('div');  // simulates vscode respectively the document
         textarea = document.createElement('textarea');
         const style = document.createElement('style');
@@ -57,14 +67,14 @@ import './app.css';
     }
 
     editor.addEventListener('input', () => {
-        if (ENV === 'vscode') {
+        if (ENV === ENVIRONMENTS.VsCode) {
             vscode.setState({
                 text: editor.value
             });
             vscode.postMessage({
                 type: 'custom-text-editor.updateFromWebview', content: editor.value
             });
-        } else if (ENV === 'browser') {
+        } else if (ENV === ENVIRONMENTS.Browser) {
             textarea.value = editor.value;
         }
     });
