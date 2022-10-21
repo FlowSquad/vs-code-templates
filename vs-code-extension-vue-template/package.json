@@ -7,9 +7,11 @@
   "publisher": "miragon-gmbh",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FlowSquad/vs-code-extension-vue-template.git"
+    "url": "https://github.com/FlowSquad/vs-code-templates/tree/main/vs-code-extension-vue-template"
   },
-  "bugs": "https://github.com/FlowSquad/vs-code-extension-vue-template/issues",
+  "bugs": {
+    "url": "https://github.com/FlowSquad/vs-code-templates/issues"
+  },
   "engines": {
     "vscode": "^1.69.0"
   },

@@ -3,14 +3,14 @@
   "displayName": "Custom Text Editor Example",
   "description": "Example for custom text editor extension.",
   "license": "Apache License 2.0",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "miragon-gmbh",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FlowSquad/vs-code-bpmn-modeler"
+    "url": "https://github.com/FlowSquad/vs-code-templates/tree/main/vs-code-custom-texteditor-template"
   },
   "bugs": {
-    "url": "https://github.com/FlowSquad/vs-code-bpmn-modeler/issues"
+    "url": "https://github.com/FlowSquad/vs-code-templates/issues"
   },
   "engines": {
     "vscode": "^1.69.0"
